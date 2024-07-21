@@ -1,13 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
+    function resizeFlipbook() {
+        var width = $('#flipbook').width();
+        var height = Math.round(width / 1.5); // Menjaga rasio aspek 4:3
+        $('#flipbook').turn('size', width, height);
+    }
+
     $("#flipbook").turn({
         width: $('#flipbook').width(),
-        height: $('#flipbook').height(),
+        height: Math.round($('#flipbook').width() / 1.5),
         autoCenter: true,
         display: 'single'  // Menampilkan satu halaman
     });
 
-    // Fungsi untuk menyesuaikan ukuran flipbook saat ukuran jendela berubah
     $(window).resize(function() {
-        $("#flipbook").turn("size", $('#flipbook').width(), $('#flipbook').height());
+        resizeFlipbook();
     });
+
+    // Panggil resizeFlipbook saat pertama kali halaman dimuat
+    resizeFlipbook();
 });
