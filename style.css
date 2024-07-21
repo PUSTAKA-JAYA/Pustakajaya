@@ -8,8 +8,9 @@ body {
 }
 
 #flipbook {
-    width: 600px;
-    height: 400px;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
 }
 
 .page {
@@ -17,39 +18,11 @@ body {
     height: 100%;
     background-size: cover;
     background-position: center;
+    overflow: hidden;
 }
 
 .page img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Media queries untuk responsivitas */
-@media (max-width: 1200px) {
-    #flipbook {
-        width: 500px;
-        height: 350px;
-    }
-}
-
-@media (max-width: 992px) {
-    #flipbook {
-        width: 400px;
-        height: 300px;
-    }
-}
-
-@media (max-width: 768px) {
-    #flipbook {
-        width: 300px;
-        height: 250px;
-    }
-}
-
-@media (max-width: 576px) {
-    #flipbook {
-        width: 100%;
-        height: auto;
-    }
+    height: auto;
+    display: block;
 }
