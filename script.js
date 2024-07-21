@@ -1,7 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     function resizeFlipbook() {
         var width = $('#flipbook').width();
-        var height = Math.round(width / 1.5); // Menjaga rasio aspek 4:3
+        var height;
+
+        // Menentukan tinggi berdasarkan orientasi
+        if (window.matchMedia("(orientation: portrait)").matches) {
+            height = Math.round(width * 1.5); // Potret
+        } else {
+            height = Math.round(width / 1.5); // Lanskap
+        }
+
         $('#flipbook').turn('size', width, height);
     }
 
