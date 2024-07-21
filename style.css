@@ -26,3 +26,14 @@ body {
     height: auto;
     display: block;
 }
+
+/* Media queries untuk mode potret */
+@media (orientation: portrait) {
+    #flipbook {
+        height: 80vh;
+    }
+
+    .page {
+        height: 100%;
+    }
+}
