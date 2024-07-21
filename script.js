@@ -26,4 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Panggil resizeFlipbook saat pertama kali halaman dimuat
     resizeFlipbook();
+
+    // Fungsi navigasi
+    $('#prev-page').click(function() {
+        $('#flipbook').turn('previous');
+    });
+
+    $('#next-page').click(function() {
+        $('#flipbook').turn('next');
+    });
 });
