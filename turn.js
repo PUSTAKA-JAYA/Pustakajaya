@@ -4,8 +4,6 @@
 	<div> Page 1 </div>
 	<div> Page 2 </div>
 	<div> Page 3 </div>
-	<div> Page 4 </div>
-  <div> Page 5 </div>
 	<div class="hard"></div>
 	<div class="hard"></div>
 </div>
