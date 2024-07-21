@@ -3,6 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
         width: 600,
         height: 400,
         autoCenter: true,
-        display: 'single'
+        display: 'single'  // Tambahkan ini untuk menampilkan satu halaman
     });
 });
