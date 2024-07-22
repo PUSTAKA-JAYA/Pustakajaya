@@ -9,6 +9,7 @@ body {
 
 #flipbook-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -32,6 +33,12 @@ body {
     display: block;
 }
 
+#navigation {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
 .nav-button {
     background-color: #333;
     color: white;
@@ -43,6 +50,11 @@ body {
 
 .nav-button:hover {
     background-color: #555;
+}
+
+#page-number {
+    margin: 0 20px;
+    font-size: 18px;
 }
 
 /* Media queries untuk mode potret */
