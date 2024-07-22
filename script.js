@@ -49,4 +49,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Update nomor halaman saat pertama kali halaman dimuat
     updatePageNumber();
+
+    // Fungsi fullscreen
+    function toggleFullscreen() {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen();
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+        }
+    }
+
+    $('#fullscreen-button').click(function() {
+        toggleFullscreen();
+    });
+
+    // Menyesuaikan ukuran flipbook saat fullscreen berubah
+    document.addEventListener('fullscreenchange', resizeFlipbook);
 });
