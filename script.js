@@ -13,11 +13,22 @@ document.addEventListener('DOMContentLoaded', () => {
         $('#flipbook').turn('size', width, height);
     }
 
+    function updatePageNumber() {
+        var currentPage = $('#flipbook').turn('page');
+        var totalPages = $('#flipbook').turn('pages');
+        $('#page-number').text(currentPage + ' / ' + totalPages);
+    }
+
     $("#flipbook").turn({
         width: $('#flipbook').width(),
         height: Math.round($('#flipbook').width() / 1.5),
         autoCenter: true,
-        display: 'single'  // Menampilkan satu halaman
+        display: 'single',  // Menampilkan satu halaman
+        when: {
+            turned: function(e, page) {
+                updatePageNumber();
+            }
+        }
     });
 
     $(window).resize(function() {
@@ -35,4 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     $('#next-page').click(function() {
         $('#flipbook').turn('next');
     });
+
+    // Update nomor halaman saat pertama kali halaman dimuat
+    updatePageNumber();
 });
