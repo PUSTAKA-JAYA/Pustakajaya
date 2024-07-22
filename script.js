@@ -65,6 +65,15 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleFullscreen();
     });
 
+    // Menampilkan tooltip saat halaman dimuat
+    const tooltip = document.getElementById('tooltip');
+    tooltip.classList.add('show');
+
+    // Menghilangkan tooltip setelah beberapa detik
+    setTimeout(() => {
+        tooltip.classList.remove('show');
+    }, 3000);
+
     // Menyesuaikan ukuran flipbook saat fullscreen berubah
     document.addEventListener('fullscreenchange', resizeFlipbook);
 });
