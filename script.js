@@ -75,5 +75,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3000);
 
     // Menyesuaikan ukuran flipbook saat fullscreen berubah
-    document.addEventListener('fullscreenchange', resizeFlipbook);
+    document.addEventListener('fullscreenchange', () => {
+        resizeFlipbook();
+
+        // Menghilangkan banner saat fullscreen
+        if (document.fullscreenElement) {
+            $('#banner').hide();
+        } else {
+            $('#banner').show();
+        }
+    });
 });
